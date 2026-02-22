@@ -11,6 +11,15 @@ body {
   font-size: 20px;
 }
 
+/* Content Container */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+
 /* Input Section */
 #user-city {
   max-width: 250px;
@@ -22,17 +31,12 @@ body {
   outline: none;
   transition: ease 0.25s;
   margin-bottom: 1.2rem;
-  
 }
 #user-city:focus {
   box-shadow: 5.5px 7px 0 black;
 }
 
-/* Content Container */
-.form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 200px;
+/* Input Label */
+label {
+  font-weight: 600;
 }
