@@ -57,10 +57,11 @@ function Header() {
                 fade
                 style={{ color: "#6366f1" }}
                 size="2x"
-                
               />
-              
-              <Badge id="main-heading-title" bg="primary" text="white">Weather App</Badge>
+
+              <Badge id="navbar-main-heading" bg="primary" text="white">
+                Weather App
+              </Badge>
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">

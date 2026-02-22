@@ -2,22 +2,12 @@ import "./Button.css";
 
 function SearchButton() {
   return (
-    <button className="animated-button">
-      <svg
-        viewBox="0 0 24 24"
-        className="arr-2"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
-      </svg>
-      <span className="text">Search</span>
-      <span className="circle"></span>
-      <svg
-        viewBox="0 0 24 24"
-        className="arr-1"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+    <button className="button">
+      <span>Search</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 43">
+        <polygon points="39.58,4.46 44.11,0 66,21.5 44.11,43 39.58,38.54 56.94,21.5"></polygon>
+        <polygon points="19.79,4.46 24.32,0 46.21,21.5 24.32,43 19.79,38.54 37.15,21.5"></polygon>
+        <polygon points="0,4.46 4.53,0 26.42,21.5 4.53,43 0,38.54 17.36,21.5"></polygon>
       </svg>
     </button>
   );
