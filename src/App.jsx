@@ -4,6 +4,7 @@ import "tailwindcss";
 import Header from "./Components/Header/Header";
 import SearchButton from "./Components/SearchButton/Button";
 import { NavLink } from "react-router";
+import "./App.css"
 
 function Weather() {
   const [userCity, setUserCity] = useState("");
@@ -38,11 +39,10 @@ function Weather() {
             name="user-city"
             id="user-city"
             placeholder="Enter the City name"
-            required
             onChange={(e) => setUserCity(e.target.value)}
           />
           <br />
-          <button type="submit">Search</button>
+          <SearchButton />
         </form>
 
         <div>
