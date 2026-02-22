@@ -5,7 +5,6 @@ import Header from "./Components/Header/Header";
 import SearchButton from "./Components/SearchButton/Button";
 import "./App.css";
 import Card from "./Components/Card/Card";
-import TheInput from "./Components/Input/Input";
 
 function Weather() {
   const [userCity, setUserCity] = useState("");
@@ -31,8 +30,12 @@ function Weather() {
         <Header />
         <div className="form-container">
           <form onSubmit={getWeather}>
-            <TheInput
-              value={userCity}
+            <label htmlFor="user-city">City Name:</label> <br />
+            <input
+              type="text"
+              name="user-city"
+              id="user-city"
+              placeholder="Enter the City name"
               onChange={(e) => setUserCity(e.target.value)}
             />
             <br />
