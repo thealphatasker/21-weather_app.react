@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import "tailwindcss";
 import Header from "./Components/Header/Header";
@@ -7,18 +7,25 @@ import "./App.css";
 import Card from "./Components/Card/Card";
 import TheInput from "./Components/Input/Input";
 import LoadingScreen from "./Components/LoadingScreen/LoadingScreen";
+import Loader from "./Components/Loader/Loader";
 
 function Weather() {
   const [userCity, setUserCity] = useState("");
   const [result, setResult] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isFetching, setIsFetching] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   async function getWeather(e) {
     e.preventDefault();
-    setIsLoading(true);
+    setIsFetching(true);
+    setResult(null);
     try {
       const API_KEY = "cbdade7bde0366db77e1ff1053ad99d1";
-
       const cityRef = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=${userCity}&appid=${API_KEY}&units=metric`,
       );
@@ -27,9 +34,10 @@ function Weather() {
       alert("Something Went Wrong, Please try again later :/");
       console.log(err);
     } finally {
-      setIsLoading(false);
+      setIsFetching(false);
     }
   }
+
   return (
     <>
       {isLoading && <LoadingScreen />}
@@ -45,7 +53,8 @@ function Weather() {
             <SearchButton />
           </form>
         </div>
-        {result && (
+        {isFetching && <Loader />}
+        {result && !isFetching && (
           <div className="card-container">
             <Card weatherData={result} />
           </div>

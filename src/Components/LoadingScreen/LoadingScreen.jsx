@@ -30,7 +30,6 @@ function LoadingScreen() {
             <div></div>
           </div>
         </div>
-        <p className="loading-text">Loading Weather Data...</p>
       </div>
     </div>
   );
